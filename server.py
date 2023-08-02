@@ -2,10 +2,8 @@
 
 import asyncio
 from websockets.server import serve
-messages = []
 
 async def echo(websocket):
-    offset = 0
     async for message in websocket:
         print(message)
         await websocket.send(message)
